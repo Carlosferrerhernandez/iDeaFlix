@@ -16,7 +16,7 @@ class CreateUserPostTable extends Migration
         Schema::create('user_post', function (Blueprint $table) {
             $table->increments('id');
 
-            
+
             /*
             * Relationship with user table
             */
@@ -29,7 +29,7 @@ class CreateUserPostTable extends Migration
             */
             
             $table->integer('post_id')->unsigned();
-            $table->foreign('post_id')->references('id')->on('post')->onDelete('cascade');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
 
             $table->timestamps();
         });
