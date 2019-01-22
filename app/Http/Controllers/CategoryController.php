@@ -69,9 +69,20 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($category)
     {
-        //
+        /*
+        *   Get category
+        */
+
+        $posts = Category::find($category)->posts;
+
+        $category = Category::findOrFail($category);
+
+
+        /*dd($category);*/
+
+        return view('categories.show', compact('category', 'posts'));
     }
 
     /**
@@ -80,9 +91,13 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($category)
     {
-        //
+        $category = Category::findOrFail($category);
+
+        /*dd($category);*/
+
+        return view('categories.edit', compact('category'));
     }
 
     /**
@@ -92,9 +107,25 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $category)
     {
         //
+
+        $category = Category::find($category);
+
+        $category->description = $request->description;
+        
+        if($category->save()) {
+            alert()->success('Se ha registrado un acceso satisfactoriamente!', '')->autoClose(10000)->showCloseButton('aria-label');
+
+            return Redirect('home');
+        }
+
+        else {
+            alert()->error('No se logro registrar el acceso satisfactoriamente', '')->autoClose(10000)->showCloseButton('aria-label');
+
+            return redirect('home');
+        }
     }
 
     /**
@@ -103,8 +134,14 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($category)
     {
         //
+
+        Category::destroy($category);
+
+        alert()->success('Se elimino correctamente', '')->autoClose(10000)->showCloseButton('aria-label');
+
+        return Redirect::to('home');
     }
 }

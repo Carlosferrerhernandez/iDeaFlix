@@ -18,7 +18,7 @@
 
 <body>
   <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-center" href="#">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-center" href="{{ route('home')}}">
       <img src="{{ asset('img/logo/Logo.png')}}" alt="ideaflix" height="22px" width="">
     </a>
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
@@ -43,27 +43,27 @@
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="#">
+            <a class="nav-link {{ Request::is('home') ? 'active' : null }}" href="{{ route('home')}}">
               <span data-feather="home"></span>
               Dashboard <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link {{ Request::is('posts') ? 'active' : null }}" href="#">
               <span data-feather="file"></span>
               Posts
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link {{ Request::is('categories') ? 'active' : null }}" href="{{ route('categories.index')}}">
               <span data-feather="bar-chart-2"></span>
-              Categorias
+              Categories
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="layers"></span>
-              Usuarios
+              Users
             </a>
           </li>
         </ul>
@@ -105,7 +105,7 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
+        <h1 class="h2"></h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
 
