@@ -2,6 +2,16 @@
 
 @section('content')
 
+<div class="col-md-6 offset-md-3">
+	<div class="card-deck mb-3 text-center">
+		<div class="card mb-4 shadow-sm">
+			<div class="card-header">
+				<h5 class="my-0 font-weight-normal">Categories iDeaFlix</h5>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="container">
 	<div class="card-deck mb-3 text-center">
 	@foreach($data as $category)
