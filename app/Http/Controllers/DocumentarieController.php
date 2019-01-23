@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
 
 class DocumentarieController extends Controller
 {
@@ -14,6 +15,12 @@ class DocumentarieController extends Controller
     public function index()
     {
         //
+
+        $series = Category::find(2)->posts;
+
+        /*dd($series);*/
+
+        return view('films.index', compact('series'));
     }
 
     /**
