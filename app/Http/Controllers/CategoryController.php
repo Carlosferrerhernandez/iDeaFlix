@@ -51,13 +51,13 @@ class CategoryController extends Controller
         $category->description = $request->description;
         
         if($category->save()) {
-            alert()->success('Se ha registrado un acceso satisfactoriamente!', '')->autoClose(10000)->showCloseButton('aria-label');
+            alert()->success('Success', '')->autoClose(10000)->showCloseButton('aria-label');
 
             return Redirect('home');
         }
 
         else {
-            alert()->error('No se logro registrar el acceso satisfactoriamente', '')->autoClose(10000)->showCloseButton('aria-label');
+            alert()->error('Error', '')->autoClose(10000)->showCloseButton('aria-label');
 
             return redirect('home');
         }

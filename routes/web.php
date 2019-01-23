@@ -25,3 +25,9 @@ Route::resource('posts', 'PostController');
 
 Route::resource('users', 'UserController');
 
+Route::resource('peliculas', 'FilmController');
+
+Route::resource('series', 'SerieController');
+
+Route::resource('documentales', 'DocumentarieController');
+

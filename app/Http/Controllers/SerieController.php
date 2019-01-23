@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SeriesController extends Controller
+class SerieController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +14,8 @@ class SeriesController extends Controller
     public function index()
     {
         //
+
+        $series = Post::all()->where('category')
     }
 
     /**

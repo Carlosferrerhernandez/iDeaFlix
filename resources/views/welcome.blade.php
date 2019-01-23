@@ -21,10 +21,10 @@
 
     <nav class="site-header sticky-top py-1">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="#">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Series</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Peliculas</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Documentales</a>
+        <a class="py-2 d-none d-md-inline-block" href="{{ route('home')}}">Inicio</a>
+        <a class="py-2 d-none d-md-inline-block" href="{{ route('series.index')}}">Series</a>
+        <a class="py-2 d-none d-md-inline-block" href="{{ route('peliculas.index')}}">Peliculas</a>
+        <a class="py-2 d-none d-md-inline-block" href="{{ route('documentales.index')}}">Documentales</a>
         <a class="py-2" href="#">
           <img src="{{ asset('img/logo/Logo.png')}}" alt="ideaflix" height="22px" width="">
         </a>
