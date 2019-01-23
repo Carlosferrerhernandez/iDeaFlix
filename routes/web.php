@@ -23,3 +23,5 @@ Route::resource('categories', 'CategoryController');
 
 Route::resource('posts', 'PostController');
 
+Route::resource('users', 'UserController');
+

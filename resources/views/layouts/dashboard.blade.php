@@ -64,7 +64,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link {{ Request::is('users') ? 'active' : null }}" href="{{ route('users.index')}}">
               <span data-feather="layers"></span>
               Users
             </a>
@@ -173,7 +173,7 @@
 
       <script>
         $(document).ready( function () {
-            $('#table_posts').DataTable();
+            $('#table_info').DataTable();
         });
       </script>
   </body>

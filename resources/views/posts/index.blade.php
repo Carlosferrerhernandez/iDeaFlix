@@ -2,7 +2,7 @@
 
 @section('content')
 
-<table id="table_posts" class="table">
+<table id="table_info" class="table">
 	<thead>
 		<tr>
 			<th>Name</th>
