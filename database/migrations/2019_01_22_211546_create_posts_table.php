@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->char('name', 100);
             $table->text('description');
             $table->char('url');
+            $table->char('year');
             $table->enum('gender', ['Accion', 'Infantil', 'Comedia', 'Ciencia ficcion', 'Aventura', 'Suspenso', 'Romance', 'Fantasia', 'Drama', 'Animacion', 'Crimen', 'Misterio'])->default('Accion');
 
             /*

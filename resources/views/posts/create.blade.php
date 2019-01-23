@@ -24,6 +24,11 @@
 					<label for="description">Description</label>
 					<textarea class="form-control" name="description" id="description" cols="7" rows="10"></textarea>
 				</div>
+
+				<div class="mb-3">
+					<label for="year">Year</label>
+					<input type="text" class="form-control" name="year" id="year">
+				</div>
 				
 				<div class="row">
 					<div class="col-md-12">
@@ -35,6 +40,27 @@
 									{{$category->description}}
 								</option>
 							@endforeach
+						</select>
+					</div>
+				</div>
+
+				<div class="row" style="margin-top: 10px;">
+					<div class="col-md-12">
+						<label for="gender">Gender</label>
+						<select class="custom-select d-block w-100" id="gender" name="gender" required>
+							<option value="" selected="select" disabled="">Select</option>
+							<option value="Accion">Acción</option>
+							<option value="Infantil">Infantil</option>
+							<option value="Comedia">Comedia</option>
+							<option value="Ciencia ficcion">Ciencia ficcion</option>
+							<option value="Aventura">Aventura</option>
+							<option value="Suspenso">Suspenso</option>
+							<option value="Romance">Romance</option>
+							<option value="Fantasia">Fantasia</option>
+							<option value="Drama">Drama</option>
+							<option value="Animacion">Animacion</option>
+							<option value="Crimen">Crimen</option>
+							<option value="Misterio">Misterio</option>
 						</select>
 					</div>
 				</div>

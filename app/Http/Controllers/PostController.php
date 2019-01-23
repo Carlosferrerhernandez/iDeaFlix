@@ -56,18 +56,19 @@ class PostController extends Controller
         $post->name = $request->name;
         $post->description = $request->description;
         $post->url = $request->url;
+        $post->year = $request->year;
         $post->category_id = $request->category_id;
         
         if($post->save()) {
             alert()->success('Success!', '')->autoClose(10000)->showCloseButton('aria-label');
 
-            return Redirect('home');
+            return Redirect::to('home');
         }
 
         else {
             alert()->error('Error', '')->autoClose(10000)->showCloseButton('aria-label');
 
-            return redirect('home');
+            return Redirect::to('home');
         }
     }
 
@@ -129,18 +130,19 @@ class PostController extends Controller
         $post->name = $request->name;
         $post->description = $request->description;
         $post->url = $request->url;
+        $post->year = $request->year;
         $post->category_id = $request->category_id;
         
         if($post->save()) {
             alert()->success('Success update!', '')->autoClose(10000)->showCloseButton('aria-label');
 
-            return Redirect('home');
+            return Redirect::to('home');
         }
 
         else {
             alert()->error('Error update', '')->autoClose(10000)->showCloseButton('aria-label');
 
-            return redirect('home');
+            return Redirect::to('home');
         }
     }
 
@@ -158,6 +160,6 @@ class PostController extends Controller
 
         alert()->success('Successful elimination', '')->autoClose(10000)->showCloseButton('aria-label');
 
-        return Redirect::to('home');
+        return Redirect::to('posts');
     }
 }

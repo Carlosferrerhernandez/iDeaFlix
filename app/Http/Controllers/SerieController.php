@@ -15,7 +15,7 @@ class SerieController extends Controller
     {
         //
 
-        $series = Post::all()->where('category')
+        /*$series = Post::all()->where('category');*/
     }
 
     /**
