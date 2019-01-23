@@ -4,7 +4,7 @@
 
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
   <div class="col-md-5 p-lg-5 mx-auto my-5">
-    <h1 class="display-4 font-weight-normal">Elite</h1>
+    <h1 class="display-4 font-weight-normal">Tus películas favoritas</h1>
     <p class="lead font-weight-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple's marketing pages.</p>
     <a class="btn btn-outline-secondary" href="#">Learn more</a>
   </div>
@@ -19,7 +19,9 @@
       <h1>Series</h1>
     </div>
     <div class="col-6 text-right">
-      <button type="button" class="btn btn-link" style="text-align: left">Ver todos</button>
+      <a href="{{ route('series.index')}}">
+        <button type="button" class="btn btn-link" style="text-align: left">Ver todos</button>
+      </a>
     </div>
   </div>
 </div>
@@ -47,7 +49,9 @@
       <h1>Películas</h1>
     </div>
     <div class="col-6 text-right">
-      <button type="button" class="btn btn-link" style="text-align: left">Ver todos</button>
+      <a href="{{ route('peliculas.index')}}">
+        <button type="button" class="btn btn-link" style="text-align: left">Ver todos</button>
+      </a>
     </div>
   </div>
 </div>
@@ -75,6 +79,9 @@
       <h1>Documentales</h1>
     </div>
     <div class="col-6 text-right">
+      <a href="{{route('documentales.index')}}">
+        
+      </a>
       <button type="button" class="btn btn-link" style="text-align: left">Ver todos</button>
     </div>
   </div>

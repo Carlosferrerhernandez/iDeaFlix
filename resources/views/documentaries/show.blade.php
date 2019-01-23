@@ -2,22 +2,28 @@
 
 @section('content')
 
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" >
-	<div class="col-md-5 p-lg-5 mx-auto my-5 text-left">
-		<h1 class="display-4 font-weight-normal">Documentales</h1>
-		<p class="lead font-weight-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quis odio optio! Accusamus, reprehenderit enim? Libero reprehenderit aspernatur blanditiis, ad accusantium odio ullam non repudiandae debitis ab atque, provident repellat.</p>
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+	<div class="col-md-5 p-lg-5 mx-auto my-5">
+		<h1 class="display-4 font-weight-normal">{{$documental->name}}</h1>
+		<p class="lead font-weight-normal">{{$documental->description}}</p>
+		<a class="btn btn-outline-secondary" href="#">Ver trailer</a>
 	</div>
 	<div class="product-device shadow-sm d-none d-md-block"></div>
 	<div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
 </div>
 
-<div class="container-fluid" style="margin-top: 100px;">
-	<div class="row offset-9" style="margin-bottom:30px;">
-		<form class="form-inline mt-2 mt-md-0 text-left">
-			<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		</form>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-6">
+			<h3>Más documentales</h3>
+		</div>
+		<div class="col-6 text-right">
+			<button type="button" class="btn btn-link" style="text-align: left">Ver todos</button>
+		</div>
 	</div>
+</div>
+
+<div class="container-fluid">
 	<div class="row">
 		@foreach($documentales as $documental)
 		<div class="col-md-4">
@@ -38,5 +44,4 @@
 		</div>
 		@endforeach
 	</div>
-
 @endsection

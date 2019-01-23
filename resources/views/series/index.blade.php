@@ -6,7 +6,6 @@
 	<div class="col-md-5 p-lg-5 mx-auto my-5 text-left">
 		<h1 class="display-4 font-weight-normal">Series</h1>
 		<p class="lead font-weight-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quis odio optio! Accusamus, reprehenderit enim? Libero reprehenderit aspernatur blanditiis, ad accusantium odio ullam non repudiandae debitis ab atque, provident repellat.</p>
-		<a class="btn btn-outline-secondary" href="#">Ver trailer</a>
 	</div>
 	<div class="product-device shadow-sm d-none d-md-block"></div>
 	<div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
