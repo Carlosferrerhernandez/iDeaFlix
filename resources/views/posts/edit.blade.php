@@ -10,9 +10,10 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<form class="needs-validation" role="form" method="POST" action="{{ route('posts.edit', $post->id) }}">
-
+		<form class="needs-validation" method="POST" id="edit_post" action="{{ route('posts.update', $post->id)}}" role="form">
+			
 			{{ csrf_field() }}
+			<input type="hidden" name="_method" value="PUT">
 
 			<div class="col-md-8 offset-md-2">
 				<div class="mb-3">

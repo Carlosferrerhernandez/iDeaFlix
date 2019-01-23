@@ -9,10 +9,8 @@
             </div>
             <div class="card-body">
                 <div class="container-fluid">
-                    <p>Description</p>
                 </div>
                 <a class="btn btn-sm btn-block btn-outline-success" href="{{ route('posts.create')}}">Create posts</a>
-                <hr>
             </div>
         </div>
         <div class="card mb-4 shadow-sm">
@@ -21,10 +19,8 @@
             </div>
             <div class="card-body">
                 <div class="container-fluid">
-                    <p>Description</p>
                 </div>
                 <a class="btn btn-sm btn-block btn-outline-success" href="{{ route('categories.create')}}">Create categories</a>
-                <hr>
             </div>
         </div>
     </div>
