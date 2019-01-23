@@ -46,12 +46,6 @@
 
 				<hr class="mb-4">
 				<button class="btn btn-success btn-lg btn-block" style="margin-bottom: 20px;" type="submit">Update</button>
-				<br>
-				{{-- <form action="{{ url('posts/'. $post->id) }}" method="POST">
-					{{ csrf_field() }}
-                    {{ method_field('DELETE') }}
-					<button class="btn btn-danger btn-lg btn-block" style="margin-bottom: 20px;" type="submit">Delete</button>
-				</form> --}}
 			</div>
 		</form>
 	</div>

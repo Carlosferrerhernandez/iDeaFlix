@@ -82,12 +82,10 @@ class PostController extends Controller
         //
 
         /*
-        *   Consulta de accesos
+        *   Consulta de post
         */
 
         $post = Post::findOrFail($post);
-
-        /*dd($accesos);*/
 
         return view('posts.show', compact('post'));
     }
@@ -123,7 +121,7 @@ class PostController extends Controller
         //
 
         /*
-        * Obtenemos el id del acceso y actualizamos el registro
+        * Obtener el id del post y actualizacion del registro
         */
 
         $post = Post::find($post);
