@@ -14,6 +14,9 @@
 
   <!-- Custom styles for this template -->
   <link href="{{ asset('css/dashboard.css')}}" rel="stylesheet">
+  
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+
 </head>
 
 <body>
@@ -49,7 +52,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('posts') ? 'active' : null }}" href="#">
+            <a class="nav-link {{ Request::is('posts') ? 'active' : null }}" href="{{ route('posts.index')}}">
               <span data-feather="file"></span>
               Posts
             </a>
@@ -116,6 +119,9 @@
           </button>
         </div>
       </div>
+
+      @include('sweetalert::alert')
+      
       <div class="container-fluid">
         @yield('content')
       </div>
@@ -168,5 +174,12 @@
           }
         });
       </script>
-    </body>
-    </html>
+      <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+
+      <script>
+        $(document).ready( function () {
+            $('#table_posts').DataTable();
+        });
+      </script>
+  </body>
+</html>

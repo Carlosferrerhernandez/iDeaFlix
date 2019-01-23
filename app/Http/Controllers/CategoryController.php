@@ -79,7 +79,6 @@ class CategoryController extends Controller
 
         $category = Category::findOrFail($category);
 
-
         /*dd($category);*/
 
         return view('categories.show', compact('category', 'posts'));

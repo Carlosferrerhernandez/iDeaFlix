@@ -6,7 +6,7 @@
 	<div class="card-deck mb-3 text-center">
 		<div class="card mb-4 shadow-sm">
 			<div class="card-header">
-				<h4 class="my-0 font-weight-normal">Free</h4>
+				<h4 class="my-0 font-weight-normal">Publications of {{ $category->description}} Category</h4>
 			</div>
 			<div class="card-body">
 				<div class="container">

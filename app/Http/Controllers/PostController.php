@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
+use App\Category;
 
 class PostController extends Controller
 {
@@ -12,8 +14,12 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
         //
+
+        $data = Post::all();
+
+        return view('posts.index', compact('data'));
     }
 
     /**
@@ -24,6 +30,10 @@ class PostController extends Controller
     public function create()
     {
         //
+
+        $categories = Category::all();
+
+        return view('posts.create', compact('categories'));
     }
 
     /**
@@ -35,6 +45,29 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+
+        /**
+        * Crear un nuevo objeto utilizando el modelo acceso
+        */
+
+        $post = new Post();
+
+        $post->name = $request->name;
+        $post->description = $request->description;
+        $post->url = $request->url;
+        $post->category_id = $request->category_id;
+        
+        if($post->save()) {
+            alert()->success('Success!', '')->autoClose(10000)->showCloseButton('aria-label');
+
+            return Redirect('home');
+        }
+
+        else {
+            alert()->error('Error', '')->autoClose(10000)->showCloseButton('aria-label');
+
+            return redirect('home');
+        }
     }
 
     /**
