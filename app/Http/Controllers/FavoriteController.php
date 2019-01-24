@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Comment;
+use App\Favorite;
 use Auth;
 use Redirect;
 
-class CommentController extends Controller
+class FavoriteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -40,28 +40,28 @@ class CommentController extends Controller
         //
 
         if (Auth::check()) {
+            
+            $user = Auth::user()->id;
+            
+            $favorite = new Favorite();
 
-        $user = Auth::user()->id;
-
-        $comment = new Comment();
-
-        $comment->description = $request->description;
-        $comment->user_id = $user;
-        $comment->post_id = $request->post_id;
+            $favorite->user_id = $user;
+            $favorite->post_id = $request->post_id;
 
 
-        $comment->save();
-        
-        alert()->success('Success!', '')->autoClose(10000)->showCloseButton('aria-label');
+            $favorite->save();
+            
+            alert()->success('Success!', '')->autoClose(10000)->showCloseButton('aria-label');
 
-            return back();
+                return back();
         }
 
         else{
 
             return Redirect::to('login');
+            
         }
-
+       
     }
 
     /**

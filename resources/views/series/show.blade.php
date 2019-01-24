@@ -6,11 +6,22 @@
 	<div class="col-md-5 p-lg-5 mx-auto my-5">
 		<h1 class="display-4 font-weight-normal">{{$serie->name}}</h1>
 		<p class="lead font-weight-normal">{{$serie->description}}</p>
-		<a class="btn btn-outline-secondary" href="#">Ver trailer</a>
+		<button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#myModal">Show trailer</button>
 	</div>
 	<div class="product-device shadow-sm d-none d-md-block"></div>
 	<div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
 </div>
+<form class="needs-validation" role="form" method="POST" action="{{ route('favoritos.store') }}">
+
+	{{ csrf_field() }}
+	
+	<input type="text" class="form-control" name="post_id" id="post_id" placeholder="" style="display: none" value="{{$serie->id}}">
+
+	<div class="text-right">
+		<button type="submit" class="btn btn-primary">Me gusta</button>
+	</div>
+</form>
+
 <div class="container-fluid">
 	<h3>Contenido</h3>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem illum facere consequatur maxime totam eligendi rerum nemo suscipit tempore. Veniam inventore laboriosam totam dicta corporis et veritatis libero in natus rerum, eveniet a asperiores vero, aperiam earum eos omnis iste. Aliquid unde iusto magnam repellendus esse tempora impedit ullam dignissimos culpa at quibusdam quam, molestias ea dolor aspernatur sint suscipit ut tempore omnis molestiae, nesciunt, architecto recusandae nam corrupti! Ad.</p>
@@ -79,11 +90,39 @@
 								<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
 							</a>
 						</div>
-						<small class="text-muted">9 mins</small>
+						<small class="text-muted">23 mins</small>
 					</div>
 				</div>
 			</div>
 		</div>
 		@endforeach
 	</div>
+
+	<!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Trailer</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="embed-responsive embed-responsive-16by9">
+			  <iframe width="420" height="345" src="https://www.youtube.com/embed/{{$serie->url}}"></iframe>
+			</div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
 @endsection

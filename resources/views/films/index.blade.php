@@ -6,7 +6,6 @@
 	<div class="col-md-5 p-lg-5 mx-auto my-5 text-left">
 		<h1 class="display-4 font-weight-normal">Peliculas</h1>
 		<p class="lead font-weight-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quis odio optio! Accusamus, reprehenderit enim? Libero reprehenderit aspernatur blanditiis, ad accusantium odio ullam non repudiandae debitis ab atque, provident repellat.</p>
-		<button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#myModal">Ver trailer</button>
 	</div>
 	<div class="product-device shadow-sm d-none d-md-block"></div>
 	<div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
@@ -39,32 +38,5 @@
 		</div>
 		@endforeach
 	</div>
-
-	<!-- The Modal -->
-  <div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Trailer - {{$pelicula->name}}</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-          <div class="embed-responsive embed-responsive-16by9">
-			  <iframe width="420" height="345" src="https://www.youtube.com/embed/{{$pelicula->url}}"></iframe>
-			</div>
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-        
-      </div>
-    </div>
-  </div>
 
 @endsection
