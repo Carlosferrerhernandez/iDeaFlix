@@ -11,6 +11,46 @@
 	<div class="product-device shadow-sm d-none d-md-block"></div>
 	<div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
 </div>
+<div class="container-fluid">
+	<h3>Contenido</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem illum facere consequatur maxime totam eligendi rerum nemo suscipit tempore. Veniam inventore laboriosam totam dicta corporis et veritatis libero in natus rerum, eveniet a asperiores vero, aperiam earum eos omnis iste. Aliquid unde iusto magnam repellendus esse tempora impedit ullam dignissimos culpa at quibusdam quam, molestias ea dolor aspernatur sint suscipit ut tempore omnis molestiae, nesciunt, architecto recusandae nam corrupti! Ad.</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo velit doloremque quas, officia repudiandae reprehenderit dolores. Quae exercitationem voluptatibus quas, suscipit beatae fugiat eveniet voluptas quod consectetur ut, dicta ipsa minima odit sunt provident a quis quaerat cum in placeat at. Repudiandae quam ipsa porro.</p>
+</div>
+
+<div class="container-fluid">
+	<h3>Detalles</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem illum facere consequatur maxime totam eligendi rerum nemo suscipit tempore. Veniam inventore laboriosam totam dicta corporis et veritatis libero in natus rerum, eveniet a asperiores vero, aperiam earum eos omnis iste. Aliquid unde iusto magnam repellendus esse tempora impedit ullam dignissimos culpa at quibusdam quam, molestias ea dolor aspernatur sint suscipit ut tempore omnis molestiae, nesciunt, architecto recusandae nam corrupti! Ad.</p>
+</div>
+
+<form class="needs-validation" role="form" method="POST" action="{{ route('comentarios.store') }}">
+
+	{{ csrf_field() }}
+	<div class="container-fluid">
+		<h3>Comentarios</h3>
+		@if($comments->count())
+			@foreach($comments as $comment)
+				{{$comment->description}}
+				<p><strong>by:</strong> {{$comment->user->name}}</p>
+			@endforeach
+		@else
+		<p>Be the first to comment</p>
+		@endif
+
+		<div class="row">
+			<div class="col-10">
+				<input type="text" class="form-control" name="description" id="description" placeholder="" required>
+
+				<input type="text" class="form-control" name="post_id" id="post_id" placeholder="" value="{{$serie->id}}" required style="display: none">
+			</div>
+			<div class="col">
+				<button type="submit" class="btn btn-success">Save</button>
+			</div>
+		</div>
+	</div>
+</form>
+
+<br>
 
 <div class="container-fluid">
 	<div class="row">
@@ -18,7 +58,9 @@
 			<h3>Más Series</h3>
 		</div>
 		<div class="col-6 text-right">
-			<button type="button" class="btn btn-link" style="text-align: left">Ver todos</button>
+			<a href="{{route('series.index')}}">
+				<button type="button" class="btn btn-link" style="text-align: left">Ver todos</button>
+			</a>
 		</div>
 	</div>
 </div>

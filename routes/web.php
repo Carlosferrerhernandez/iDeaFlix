@@ -31,3 +31,5 @@ Route::resource('series', 'SerieController');
 
 Route::resource('documentales', 'DocumentarieController');
 
+Route::resource('comentarios', 'CommentController');
+

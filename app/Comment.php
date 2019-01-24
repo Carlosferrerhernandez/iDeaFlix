@@ -8,6 +8,10 @@ class Comment extends Model
 {
     //
 
+    protected $table = "comments";
+
+    protected $fillable = ['id', 'description', 'user_id', 'post_id'];
+
     /**
      * Get the post that owns the comment.
      */

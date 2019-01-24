@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
-use App\Post;
 use App\Comment;
+use Auth;
 
-class SerieController extends Controller
-{   
+class CommentController extends Controller
+{
     /**
      * Display a listing of the resource.
      *
@@ -17,13 +16,6 @@ class SerieController extends Controller
     public function index()
     {
         //
-
-        $series = Category::find(3)->posts;
-
-        /*dd($series);*/
-
-        return view('series.index', compact('series'));
-
     }
 
     /**
@@ -45,6 +37,26 @@ class SerieController extends Controller
     public function store(Request $request)
     {
         //
+        $user = Auth::user()->id;
+
+        $comment = new Comment();
+
+        $comment->description = $request->description;
+        $comment->user_id = $user;
+        $comment->post_id = $request->post_id;
+
+
+        if($comment->save()) {
+            alert()->success('Success!', '')->autoClose(10000)->showCloseButton('aria-label');
+
+            return back();
+        }
+
+        else {
+            alert()->error('Error', '')->autoClose(10000)->showCloseButton('aria-label');
+
+            return back();
+        }
     }
 
     /**
@@ -53,19 +65,9 @@ class SerieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($serie)
+    public function show($id)
     {
         //
-
-        $comments = Comment::all()->where('post_id', $serie);
-
-        $series = Category::find(3)->posts;
-
-        $serie = Post::findOrFail($serie);
-
-        /*dd($serie);*/
-
-        return view('series.show', compact('serie', 'series', 'comments'));
     }
 
     /**
