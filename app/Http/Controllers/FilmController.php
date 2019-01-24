@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
+use App\Post;
 
 class FilmController extends Controller
 {
@@ -14,6 +16,12 @@ class FilmController extends Controller
     public function index()
     {
         //
+
+        $peliculas = Category::find(1)->posts;
+
+        /*dd($series);*/
+
+        return view('films.index', compact('peliculas'));
     }
 
     /**
@@ -43,9 +51,17 @@ class FilmController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($pelicula)
     {
         //
+
+        $peliculas = Category::find(1)->posts;
+
+        $pelicula = Post::findOrFail($pelicula);
+
+        /*dd($serie);*/
+
+        return view('films.show', compact('pelicula', 'peliculas'));
     }
 
     /**

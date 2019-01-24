@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
+use App\Post;
 
 class DocumentarieController extends Controller
 {
@@ -14,6 +16,12 @@ class DocumentarieController extends Controller
     public function index()
     {
         //
+
+        $documentales = Category::find(2)->posts;
+
+        /*dd($documentales);*/
+
+        return view('documentaries.index', compact('documentales'));
     }
 
     /**
@@ -43,9 +51,17 @@ class DocumentarieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($documental)
     {
         //
+
+        $documentales = Category::find(2)->posts;
+
+        $documental = Post::findOrFail($documental);
+
+        /*dd($serie);*/
+
+        return view('documentaries.show', compact('documental', 'documentales'));
     }
 
     /**

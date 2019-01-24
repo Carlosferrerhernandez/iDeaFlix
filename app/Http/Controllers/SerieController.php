@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
+use App\Post;
 
 class SerieController extends Controller
-{
+{   
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +17,12 @@ class SerieController extends Controller
     {
         //
 
-        /*$series = Post::all()->where('category');*/
+        $series = Category::find(3)->posts;
+
+        /*dd($series);*/
+
+        return view('series.index', compact('series'));
+
     }
 
     /**
@@ -45,9 +52,17 @@ class SerieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($serie)
     {
         //
+
+        $series = Category::find(3)->posts;
+
+        $serie = Post::findOrFail($serie);
+
+        /*dd($serie);*/
+
+        return view('series.show', compact('serie', 'series'));
     }
 
     /**
