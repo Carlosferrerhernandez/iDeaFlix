@@ -27,7 +27,7 @@
             <a class="py-2 d-none d-md-inline-block" href="{{ route('series.index')}}">Series</a>
             <a class="py-2 d-none d-md-inline-block" href="{{ route('peliculas.index')}}">Peliculas</a>
             <a class="py-2 d-none d-md-inline-block" href="{{ route('documentales.index')}}">Documentales</a>
-            <a class="py-2" href="#">
+            <a class="py-2" href="{{ url('/')}}">
                 <img src="{{ asset('img/logo/Logo.png')}}" alt="ideaflix" height="22px" width="">
             </a>
             <a class="py-2 d-none d-md-inline-block" href="#">Favoritos</a>
@@ -41,7 +41,7 @@
             @endif
         </div>
     </nav>
-
+    @include('sweetalert::alert')
     <div class="container-fluid">
         @yield('content')
     </div>

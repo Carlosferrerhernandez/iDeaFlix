@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
+use App\Comment;
 
 class DocumentarieController extends Controller
 {
@@ -55,13 +56,15 @@ class DocumentarieController extends Controller
     {
         //
 
+        $comments = Comment::all()->where('post_id', $documental);
+
         $documentales = Category::find(2)->posts;
 
         $documental = Post::findOrFail($documental);
 
         /*dd($serie);*/
 
-        return view('documentaries.show', compact('documental', 'documentales'));
+        return view('documentaries.show', compact('documental', 'documentales', 'comments'));
     }
 
     /**

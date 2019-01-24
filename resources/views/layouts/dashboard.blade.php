@@ -7,7 +7,7 @@
   <meta name="author" content="">
   <link rel="icon" href="{{ asset('img/favicon.ico')}}">
 
-  <title>{{ config('app.name', 'iDeaFlix - Dashboard') }}</title>
+  <title>iDeaFlix - Dashboard</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">

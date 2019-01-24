@@ -28,8 +28,8 @@
 			<td>{{$post->gender}}</td>
 			<td>{{$post->created_at}}</td>
 			<td class="text-center">
-				<a href="{{ URL::to('posts/' . $post->id) }}" rel="tooltip" title="Edit">
-					<i class="ti-pencil-alt"></i>Show post
+				<a href="{{ URL::to('posts/' . $post->id . '/edit') }}" rel="tooltip" title="Edit">
+					<i class="ti-pencil-alt"></i>Edit post
 				</a>
             </td>
         </tr>

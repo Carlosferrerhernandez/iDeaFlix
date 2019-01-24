@@ -10,31 +10,40 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<form class="needs-validation" role="form" method="POST" action="{{ route('posts.store') }}">
-
-			{{ csrf_field() }}
-
-			<div class="col-md-8 offset-md-2">
-				<div class="mb-3">
-					<h6 for="name">Name</h6>
-					<p>{{$user->name}}</p>
-				</div>
-
-				<div class="mb-3">
-					<h6 for="email">Email</h6>
-					<p>{{$user->email}}</p>
-				</div>
-				
-
-				<div class="mb-3" style="margin-top: 10px;">
-					<h6 for="url">Registration date</h6>
-					<p>{{$user->created_at}}</p>
-				</div>
-
-				<hr class="mb-4">
-				<button class="btn btn-danger btn-lg btn-block" style="margin-bottom: 20px;" type="submit">Show favorites</button>
+		<div class="col-md-8 offset-md-2">
+			<div class="mb-3">
+				<h6 for="name">Name</h6>
+				<p>{{$user->name}}</p>
 			</div>
-		</form>
+
+			<div class="mb-3">
+				<h6 for="email">Email</h6>
+				<p>{{$user->email}}</p>
+			</div>
+
+
+			<div class="mb-3" style="margin-top: 10px;">
+				<h6 for="url">Registration date</h6>
+				<p>{{$user->created_at}}</p>
+			</div>
+
+			<hr class="mb-4">
+			<a href="">
+				<a class="btn btn-danger" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Show favorites
+  				</a>
+			</a>
+
+			<br>
+
+			<div class="collapse" id="collapseExample" style="margin-top: 10px;">
+			  <div class="card card-body">
+
+			  	@foreach($user->favorites as $favorite)
+			    	<p>{{$favorite->post_id}}</p>
+			    @endforeach
+			  </div>
+			</div>
+		</div>
 	</div>
 </div>
 

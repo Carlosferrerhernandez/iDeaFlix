@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
+use App\Comment;
 
 class FilmController extends Controller
 {
@@ -55,13 +56,15 @@ class FilmController extends Controller
     {
         //
 
+        $comments = Comment::all()->where('post_id', $pelicula);
+
         $peliculas = Category::find(1)->posts;
 
         $pelicula = Post::findOrFail($pelicula);
 
         /*dd($serie);*/
 
-        return view('films.show', compact('pelicula', 'peliculas'));
+        return view('films.show', compact('pelicula', 'peliculas', 'comments'));
     }
 
     /**
