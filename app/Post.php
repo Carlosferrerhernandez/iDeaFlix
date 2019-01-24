@@ -20,6 +20,15 @@ class Post extends Model
     }
 
     /**
+     * Get the comments for the blog post.
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+    
+
+    /**
      * Get the category that owns the post.
      */
     public function category()
